@@ -1,0 +1,99 @@
+
+/*font-size: calc(64px + 36 * ((100vw - 320px) / (2080 - 320)));*/
+$maxWidth: 1890;
+@mixin adaptiv-font($pcSize, $mobSize) {
+ $addSize: $pcSize - $mobSize;
+ $maxWidth: $maxWidth - 320;
+ font-size: calc(#{$mobSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth}));
+}
+html,
+body {
+	height: 100%;
+    @include adaptiv-font(18, 14 );
+    font-weight: 400;
+    line-height: 133%;
+    color: 	#1A344C;
+    font-family: 'Poppins Regular', sans-serif;
+
+}
+.wrapper {
+	display: flex;
+	flex-direction: column;
+	min-height: 100%;
+	max-width: 1890px;
+	min-width: 320px;
+}
+
+.main {
+	flex: 1 0 auto;
+}
+.footer {
+	flex: 0 0 auto;
+}
+
+.container{
+  max-width: 1890px;
+  width: 1515px;
+  min-width: 400px;
+  padding-left: 10%;
+  margin: 0 auto;
+  border: 1px solid red;
+
+}
+img{
+    max-width: 100%;
+	max-height: 100%;
+}
+a{
+    text-decoration: none;
+    color: inherit;
+}
+
+button{
+    background-color: #FAC216;
+	color: #011953;
+    border: 1px solid #011953;
+	text-transform: uppercase;
+	line-height: 137%;
+	font-size: 16px;
+    cursor: pointer;
+	margin-left: 5px;
+	width: 225px;
+	height: 60px;
+
+}
+h1 {
+	font-family: 'Poppins-Bold', sans-serif;
+	font-weight: 700;
+	font-style: normal;
+	@include adaptiv-font(64, 34 );
+	line-height: 140%;
+	text-align: left;
+	text-transform: uppercase;
+}
+h2{
+    font-family: 'Poppins-Bold', sans-serif;
+	font-weight: 700;
+	font-style: normal;
+	@include adaptiv-font(48, 24 );
+	line-height: 117%;
+	text-align: left;
+	letter-spacing: 5%;
+	vertical-align: top;
+	text-transform: uppercase;
+}
+h3{
+    font-family: 'Poppins', sans-serif;
+	font-weight: 500;
+	font-style: normal;
+	@include adaptiv-font(24, 18 );
+	line-height: 150%;
+	text-align: left;
+	letter-spacing: 8%;
+	vertical-align: top;
+	text-transform: uppercase;
+}
+
+
+
+
